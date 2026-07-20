@@ -56,8 +56,8 @@ function cardHtml(item) {
 function previewHtml(item) {
   if (item.preview === "snake") {
     return `
-      <div class="preview preview-snake" aria-hidden="true">
-        <div class="snake-board">
+      <div class="preview preview-snake">
+        <div class="snake-board" aria-hidden="true">
           <span class="cell snake s1"></span>
           <span class="cell snake s2"></span>
           <span class="cell snake s3"></span>
@@ -65,6 +65,8 @@ function previewHtml(item) {
           <span class="cell snake s5"></span>
           <span class="cell food"></span>
         </div>
+        <span class="qr-caption">Sken pro hraní</span>
+        <div class="qr-badge" title="Naskenuj a hraj s námi" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" shape-rendering="crispEdges"><path stroke="#111111" d="M1 1.5h7m1 0h2m5 0h3m4 0h7M1 2.5h1m5 0h1m2 0h6m1 0h1m1 0h1m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m1 0h2m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m2 0h1m4 0h1m2 0h3m2 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m3 0h2m1 0h3m1 0h2m3 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m3 0h1m1 0h1m4 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M10 8.5h1m2 0h1m1 0h3m3 0h1M1 9.5h1m1 0h1m3 0h2m2 0h2m1 0h2m1 0h1m1 0h2m3 0h1m2 0h1m1 0h1M1 10.5h2m8 0h1m2 0h2m2 0h1m1 0h2m1 0h2m3 0h2M4 11.5h2m1 0h1m8 0h1m3 0h1m1 0h1m2 0h3m1 0h1M3 12.5h1m1 0h1m2 0h1m3 0h3m1 0h2m4 0h2m2 0h1M3 13.5h1m1 0h1m1 0h1m1 0h2m3 0h1m2 0h1m3 0h1m1 0h2m4 0h1M6 14.5h1m3 0h3m3 0h1m1 0h1m1 0h2m1 0h2m3 0h2M2 15.5h3m2 0h1m1 0h2m3 0h3m1 0h3m8 0h1M2 16.5h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3M1 17.5h1m5 0h3m3 0h5m2 0h2m1 0h1m5 0h1M2 18.5h1m2 0h1m3 0h3m1 0h6m1 0h2m1 0h2m2 0h3M1 19.5h4m2 0h1m1 0h1m1 0h1m4 0h1m3 0h2m1 0h1m1 0h2m2 0h1M3 20.5h2m1 0h1m1 0h3m3 0h1m1 0h1m2 0h4m2 0h1M1 21.5h2m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m2 0h1m1 0h1m1 0h6m1 0h1M9 22.5h1m2 0h1m3 0h3m2 0h1m3 0h3m1 0h1M1 23.5h7m1 0h2m2 0h4m4 0h1m1 0h1m1 0h1m3 0h1M1 24.5h1m5 0h1m2 0h2m3 0h1m3 0h1m1 0h1m3 0h1m3 0h1M1 25.5h1m1 0h3m1 0h1m3 0h2m1 0h4m2 0h7m1 0h2M1 26.5h1m1 0h3m1 0h1m2 0h4m1 0h3m1 0h1m2 0h1m2 0h3m1 0h1M1 27.5h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m5 0h1m2 0h2M1 28.5h1m5 0h1m3 0h2m2 0h3m1 0h1m1 0h1m2 0h1m1 0h1M1 29.5h7m1 0h2m1 0h4m1 0h1m3 0h1m4 0h1m2 0h1"/></svg></div>
         <div class="preview-overlay">
           <span class="play-btn">▶ Hrát hru</span>
         </div>
