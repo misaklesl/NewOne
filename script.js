@@ -31,17 +31,53 @@ function cardHtml(item) {
     .map(t => `<span class="tag">${escapeHtml(t)}</span>`)
     .join("");
   const date = item.date ? `<span class="date">${escapeHtml(item.date)}</span>` : "";
+  const preview = item.link ? previewHtml(item) : "";
+  const repoHint = item.link
+    ? `<div class="card-link-hint">🔗 ${escapeHtml(item.repo || "Zahrát si")} · GitHub Pages ↗</div>`
+    : "";
+
+  const body = `
+    <div class="card-top">
+      ${badge}
+      ${date}
+    </div>
+    ${preview}
+    <h3>${escapeHtml(item.title)}</h3>
+    <p>${escapeHtml(item.description)}</p>
+    <div class="tags">${tags}</div>
+    ${repoHint}
+  `;
+
+  return item.link
+    ? `<a class="card card-link" href="${escapeAttr(item.link)}" target="_blank" rel="noopener noreferrer">${body}</a>`
+    : `<article class="card">${body}</article>`;
+}
+
+function previewHtml(item) {
+  if (item.preview === "snake") {
+    return `
+      <div class="preview preview-snake" aria-hidden="true">
+        <div class="snake-board">
+          <span class="cell snake s1"></span>
+          <span class="cell snake s2"></span>
+          <span class="cell snake s3"></span>
+          <span class="cell snake s4"></span>
+          <span class="cell snake s5"></span>
+          <span class="cell food"></span>
+        </div>
+        <div class="preview-overlay">
+          <span class="play-btn">▶ Hrát hru</span>
+        </div>
+      </div>
+    `;
+  }
 
   return `
-    <article class="card">
-      <div class="card-top">
-        ${badge}
-        ${date}
+    <div class="preview preview-generic" aria-hidden="true">
+      <div class="preview-overlay preview-overlay-static">
+        <span class="play-btn">🔗 Otevřít</span>
       </div>
-      <h3>${escapeHtml(item.title)}</h3>
-      <p>${escapeHtml(item.description)}</p>
-      <div class="tags">${tags}</div>
-    </article>
+    </div>
   `;
 }
 
@@ -49,6 +85,10 @@ function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str;
   return div.innerHTML;
+}
+
+function escapeAttr(str) {
+  return escapeHtml(str).replaceAll('"', "&quot;");
 }
 
 tabButtons.forEach(btn => {
