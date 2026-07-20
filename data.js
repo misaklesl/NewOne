@@ -1,12 +1,19 @@
 // Zde upravujte obsah stránky.
 // status: "done" = dokončený vývoj, "idea" = potenciální nápad
+// U dokončených položek lze volitelně přidat:
+//   link: URL, kam se karta prokliká (např. GitHub Pages s hotovou hrou/appkou)
+//   repo: "uzivatel/repo" – zobrazí se jako odkaz na GitHub repozitář
+//   preview: "snake" – zapne speciální animovaný náhled pro danou položku
 const ITEMS = [
   {
     status: "done",
-    title: "Ukázková funkce č. 1",
+    title: "Had vs. Počítač",
     date: "2026-06",
-    description: "Krátký popis toho, co bylo hotové a jaký přínos to má. Nahraďte vlastním textem.",
-    tags: ["backend", "API"]
+    description: "Hra Had pro dva hráče přímo v prohlížeči – zelený had ovládaný hráčem proti červenému hadovi řízenému počítačem, s náhodnými překážkami a průběžným skóre.",
+    tags: ["hra", "HTML/JS"],
+    repo: "misaklesl/snake",
+    link: "https://misaklesl.github.io/snake/",
+    preview: "snake"
   },
   {
     status: "done",
