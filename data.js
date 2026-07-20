@@ -1,9 +1,9 @@
 // Zde upravujte obsah stránky.
 // status: "done" = dokončený vývoj, "idea" = potenciální nápad
 // U dokončených položek lze volitelně přidat:
-//   link: URL, kam se karta prokliká (např. GitHub Pages s hotovou hrou/appkou)
+//   link: URL, kam se karta prokliká (např. GitHub Pages s hotovou hrou/appkou, nebo GitHub repozitář)
 //   repo: "uzivatel/repo" – zobrazí se jako odkaz na GitHub repozitář
-//   preview: "snake" – zapne speciální animovaný náhled pro danou položku
+//   preview: "snake" | "prani" | "rituals" – zapne speciální animovaný náhled pro danou položku
 const ITEMS = [
   {
     status: "done",
@@ -17,10 +17,23 @@ const ITEMS = [
   },
   {
     status: "done",
-    title: "Ukázková funkce č. 2",
+    title: "Narozeninové přání",
     date: "2026-07",
-    description: "Další dokončený kus vývoje. Popište, co se změnilo a proč to bylo důležité.",
-    tags: ["frontend", "UX"]
+    description: "Interaktivní narozeninové přání – návštěvník otevírá dvířka šipkami nebo kliknutím a odhaluje přání s konfetovou oslavou.",
+    tags: ["přání", "HTML/JS"],
+    repo: "misaklesl/prani",
+    link: "https://github.com/misaklesl/prani",
+    preview: "prani"
+  },
+  {
+    status: "done",
+    title: "Rituals – sledování návyků",
+    date: "2026-07",
+    description: "Minimalistická appka na sledování denních návyků – týdenní mřížka, odškrtávání, statistiky a světlý/tmavý režim, funguje i offline jako PWA.",
+    tags: ["PWA", "návyky"],
+    repo: "misaklesl/rituals",
+    link: "https://github.com/misaklesl/rituals",
+    preview: "rituals"
   },
   {
     status: "idea",
