@@ -22,7 +22,7 @@ const ITEMS = [
     description: "Interaktivní narozeninové přání – návštěvník otevírá dvířka šipkami nebo kliknutím a odhaluje přání s konfetovou oslavou.",
     tags: ["přání", "HTML/JS"],
     repo: "misaklesl/prani",
-    link: "https://github.com/misaklesl/prani",
+    link: "https://misaklesl.github.io/prani/",
     preview: "prani"
   },
   {
@@ -32,7 +32,7 @@ const ITEMS = [
     description: "Minimalistická appka na sledování denních návyků – týdenní mřížka, odškrtávání, statistiky a světlý/tmavý režim, funguje i offline jako PWA.",
     tags: ["PWA", "návyky"],
     repo: "misaklesl/rituals",
-    link: "https://github.com/misaklesl/rituals",
+    link: "https://misaklesl.github.io/rituals/",
     preview: "rituals"
   },
   {

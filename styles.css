@@ -325,7 +325,29 @@ body {
 }
 
 .preview-rituals {
-  background: linear-gradient(160deg, #0b2e33, #12474e);
+  background: linear-gradient(160deg, #f5f0e8 0%, #e5dece 55%, #cbb68f 100%);
+}
+
+.rituals-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.rituals-blob-1 {
+  width: 130px;
+  height: 130px;
+  top: -40px;
+  right: -30px;
+  background: radial-gradient(circle, rgba(139, 111, 71, 0.4), transparent 70%);
+}
+
+.rituals-blob-2 {
+  width: 100px;
+  height: 100px;
+  bottom: -35px;
+  left: 8%;
+  background: radial-gradient(circle, rgba(107, 140, 90, 0.35), transparent 70%);
 }
 
 .habit-grid {
@@ -336,13 +358,15 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 0 14px;
+  z-index: 1;
 }
 
 .day {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid rgba(139, 111, 71, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,13 +376,13 @@ body {
 }
 
 .day.pending {
-  background: rgba(255, 255, 255, 0.08);
+  color: transparent;
 }
 
 .day.done {
-  background: #34d399;
-  border-color: #34d399;
-  color: #06281d;
+  background: #6b8c5a;
+  border-color: #6b8c5a;
+  color: #f5f0e8;
   animation: day-check 2.4s ease-in-out infinite;
 }
 
