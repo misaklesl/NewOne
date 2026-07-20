@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Přehled vývoje a nápadů</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <h1>🚀 Přehled vývoje</h1>
+    <p class="subtitle">k čemu jsem využila AI a k čemu jí můžete použít i vy</p>
+  </div>
+</header>
+
+<nav class="tabs container">
+  <button class="tab-btn active" data-filter="all">Vše</button>
+  <button class="tab-btn" data-filter="done">✅ Dokončeno</button>
+  <button class="tab-btn" data-filter="idea">💡 Nápady</button>
+</nav>
+
+<main class="container">
+  <div class="toolbar">
+    <input id="search" type="search" placeholder="Hledat podle názvu, popisu nebo štítku…">
+    <span id="count" class="count"></span>
+  </div>
+
+  <section id="cards" class="cards"></section>
+
+  <p id="empty" class="empty hidden">Nic nenalezeno. Zkuste jiné hledání.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Obsah upravíte v souboru <code>data.js</code>.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
