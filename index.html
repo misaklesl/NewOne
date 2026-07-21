@@ -33,40 +33,73 @@
   <p id="empty" class="empty hidden">Nic nenalezeno. Zkuste jiné hledání.</p>
 
   <section id="ai-workflow" class="ai-workflow hidden">
-    <div class="ai-tool">
-      <div class="ai-tool-top">
-        <span class="ai-tool-icon" aria-hidden="true">💬</span>
-        <h3>Claude Chat</h3>
+    <div class="ai-tools-grid">
+      <div class="ai-tool">
+        <div class="ai-tool-top">
+          <span class="ai-tool-icon" aria-hidden="true">💬</span>
+          <h3>Claude Chat</h3>
+        </div>
+        <p class="ai-tool-tag">Na co je vhodný</p>
+        <ul>
+          <li>Tvorba dokumentů – založení projektu s dokumenty a postupné „učení se“ na nich</li>
+          <li>Artefakty – rychlé návrhy, vizualizace a prototypy přímo v konverzaci</li>
+        </ul>
       </div>
-      <p class="ai-tool-tag">Na co je vhodný</p>
-      <ul>
-        <li>Tvorba dokumentů – založení projektu s dokumenty a postupné „učení se“ na nich</li>
-        <li>Artefakty – rychlé návrhy, vizualizace a prototypy přímo v konverzaci</li>
+
+      <div class="ai-tool">
+        <div class="ai-tool-top">
+          <span class="ai-tool-icon" aria-hidden="true">💻</span>
+          <h3>Claude Code</h3>
+        </div>
+        <p class="ai-tool-tag">Na co je vhodný</p>
+        <ul>
+          <li>Kódování – psaní, ladění a refaktoring kódu, code review</li>
+          <li>Napárování na GitHub – čte repozitář, commituje změny a sám otevře pull request k zadanému úkolu</li>
+        </ul>
+      </div>
+
+      <div class="ai-tool">
+        <div class="ai-tool-top">
+          <span class="ai-tool-icon" aria-hidden="true">🎨</span>
+          <h3>Claude Design</h3>
+        </div>
+        <p>Vizuální návrhy a prototypy – od kartiček nápadů po kompletní vzhled stránky, v jednotném stylu.</p>
+      </div>
+
+      <div class="ai-tool">
+        <div class="ai-tool-top">
+          <span class="ai-tool-icon" aria-hidden="true">🎓</span>
+          <h3>Vzdělávání</h3>
+        </div>
+        <p>NotebookLM a podobné nástroje – z dokumentů a poznámek vygenerují shrnutí nebo podcast k poslechu cestou do práce.</p>
+      </div>
+    </div>
+
+    <div class="ai-prompts">
+      <h3>Vhodné prompty pro AI</h3>
+      <p class="ai-prompts-intro">Pár příkladů, které si můžete rovnou zkopírovat a upravit podle svého zadání:</p>
+      <ul class="prompt-list">
+        <li>
+          <span class="prompt-label">Kontrola smlouvy</span>
+          <span class="prompt-text">„Zkontroluj tuhle smlouvu proti naší šabloně a vypiš, jaké povinné doložky chybí.“</span>
+        </li>
+        <li>
+          <span class="prompt-label">Vytěžení faktury</span>
+          <span class="prompt-text">„Přečti přiloženou fakturu a vypiš dodavatele, částku, variabilní symbol a datum splatnosti do tabulky.“</span>
+        </li>
+        <li>
+          <span class="prompt-label">Review kódu</span>
+          <span class="prompt-text">„Projdi tuhle Pascal proceduru, najdi chyby a nekonzistence s našimi konvencemi a navrhni opravu.“</span>
+        </li>
+        <li>
+          <span class="prompt-label">Řešení tiketu</span>
+          <span class="prompt-text">„Tady je popis problému od zákazníka. Najdi podobné dřívější případy a navrhni, jak postupovat.“</span>
+        </li>
+        <li>
+          <span class="prompt-label">Obecná zásada</span>
+          <span class="prompt-text">„Buď konkrétní – napiš, o co jde, jaký formát výstupu chceš a co má AI naopak ignorovat.“</span>
+        </li>
       </ul>
-    </div>
-
-    <div class="ai-tool">
-      <div class="ai-tool-top">
-        <span class="ai-tool-icon" aria-hidden="true">💻</span>
-        <h3>Claude Code</h3>
-      </div>
-      <p>Napárování na GitHub repozitář – čte kód, commituje změny a sám otevře pull request k zadanému úkolu.</p>
-    </div>
-
-    <div class="ai-tool">
-      <div class="ai-tool-top">
-        <span class="ai-tool-icon" aria-hidden="true">🎨</span>
-        <h3>Claude Design</h3>
-      </div>
-      <p>Vizuální návrhy a prototypy – od kartiček nápadů po kompletní vzhled stránky, v jednotném stylu.</p>
-    </div>
-
-    <div class="ai-tool">
-      <div class="ai-tool-top">
-        <span class="ai-tool-icon" aria-hidden="true">🎓</span>
-        <h3>Vzdělávání</h3>
-      </div>
-      <p>NotebookLM a podobné nástroje – z dokumentů a poznámek vygenerují shrnutí nebo podcast k poslechu cestou do práce.</p>
     </div>
   </section>
 </main>

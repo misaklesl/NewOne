@@ -529,10 +529,16 @@ body {
 }
 
 .ai-workflow {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.ai-tools-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
-  padding-bottom: 2rem;
 }
 
 .ai-tool {
@@ -568,10 +574,11 @@ body {
 }
 
 .ai-tool-tag {
-  font-size: 0.75rem;
+  font-family: Georgia, "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  font-style: italic;
+  font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   color: var(--accent);
   margin: 0;
 }
@@ -584,4 +591,53 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+}
+
+.ai-prompts {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+}
+
+.ai-prompts h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.ai-prompts-intro {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.prompt-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.prompt-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  border-left: 2px solid var(--border);
+  padding-left: 0.75rem;
+}
+
+.prompt-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+}
+
+.prompt-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem;
+  color: var(--text);
 }
