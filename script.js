@@ -6,7 +6,7 @@ const toolbarEl = document.getElementById("toolbar");
 const aiWorkflowEl = document.getElementById("ai-workflow");
 const tabButtons = document.querySelectorAll(".tab-btn");
 
-let activeFilter = "all";
+let activeFilter = "done";
 
 function render() {
   const isAiTab = activeFilter === "ai";
@@ -21,7 +21,7 @@ function render() {
   const query = searchEl.value.trim().toLowerCase();
 
   const filtered = ITEMS.filter(item => {
-    const matchesFilter = activeFilter === "all" || item.status === activeFilter;
+    const matchesFilter = item.status === activeFilter;
     const haystack = [item.title, item.description, ...(item.tags || [])]
       .join(" ")
       .toLowerCase();
