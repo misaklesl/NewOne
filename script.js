@@ -2,11 +2,22 @@ const cardsEl = document.getElementById("cards");
 const searchEl = document.getElementById("search");
 const countEl = document.getElementById("count");
 const emptyEl = document.getElementById("empty");
+const toolbarEl = document.getElementById("toolbar");
+const aiWorkflowEl = document.getElementById("ai-workflow");
 const tabButtons = document.querySelectorAll(".tab-btn");
 
 let activeFilter = "all";
 
 function render() {
+  const isAiTab = activeFilter === "ai";
+  toolbarEl.classList.toggle("hidden", isAiTab);
+  cardsEl.classList.toggle("hidden", isAiTab);
+  aiWorkflowEl.classList.toggle("hidden", !isAiTab);
+  if (isAiTab) {
+    emptyEl.classList.add("hidden");
+    return;
+  }
+
   const query = searchEl.value.trim().toLowerCase();
 
   const filtered = ITEMS.filter(item => {

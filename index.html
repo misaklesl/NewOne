@@ -19,10 +19,11 @@
   <button class="tab-btn active" data-filter="all">Vše</button>
   <button class="tab-btn" data-filter="done">✅ Dokončeno</button>
   <button class="tab-btn" data-filter="idea">💡 Nápady</button>
+  <button class="tab-btn" data-filter="ai">🧠 Jak pracuju s AI</button>
 </nav>
 
 <main class="container">
-  <div class="toolbar">
+  <div id="toolbar" class="toolbar">
     <input id="search" type="search" placeholder="Hledat podle názvu, popisu nebo štítku…">
     <span id="count" class="count"></span>
   </div>
@@ -30,6 +31,44 @@
   <section id="cards" class="cards"></section>
 
   <p id="empty" class="empty hidden">Nic nenalezeno. Zkuste jiné hledání.</p>
+
+  <section id="ai-workflow" class="ai-workflow hidden">
+    <div class="ai-tool">
+      <div class="ai-tool-top">
+        <span class="ai-tool-icon" aria-hidden="true">💬</span>
+        <h3>Claude Chat</h3>
+      </div>
+      <p class="ai-tool-tag">Na co je vhodný</p>
+      <ul>
+        <li>Tvorba dokumentů – založení projektu s dokumenty a postupné „učení se“ na nich</li>
+        <li>Artefakty – rychlé návrhy, vizualizace a prototypy přímo v konverzaci</li>
+      </ul>
+    </div>
+
+    <div class="ai-tool">
+      <div class="ai-tool-top">
+        <span class="ai-tool-icon" aria-hidden="true">💻</span>
+        <h3>Claude Code</h3>
+      </div>
+      <p>Napárování na GitHub repozitář – čte kód, commituje změny a sám otevře pull request k zadanému úkolu.</p>
+    </div>
+
+    <div class="ai-tool">
+      <div class="ai-tool-top">
+        <span class="ai-tool-icon" aria-hidden="true">🎨</span>
+        <h3>Claude Design</h3>
+      </div>
+      <p>Vizuální návrhy a prototypy – od kartiček nápadů po kompletní vzhled stránky, v jednotném stylu.</p>
+    </div>
+
+    <div class="ai-tool">
+      <div class="ai-tool-top">
+        <span class="ai-tool-icon" aria-hidden="true">🎓</span>
+        <h3>Vzdělávání</h3>
+      </div>
+      <p>NotebookLM a podobné nástroje – z dokumentů a poznámek vygenerují shrnutí nebo podcast k poslechu cestou do práce.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
