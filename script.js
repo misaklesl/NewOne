@@ -1,3 +1,24 @@
+const themeToggleBtn = document.getElementById("theme-toggle");
+const themeIconEl = themeToggleBtn.querySelector(".theme-icon");
+
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  themeToggleBtn.setAttribute("aria-pressed", String(theme === "dark"));
+  themeIconEl.textContent = theme === "dark" ? "☀️" : "🌙";
+}
+
+themeToggleBtn.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", next);
+  applyTheme(next);
+});
+
+applyTheme(currentTheme());
+
 const cardsEl = document.getElementById("cards");
 const searchEl = document.getElementById("search");
 const countEl = document.getElementById("count");
