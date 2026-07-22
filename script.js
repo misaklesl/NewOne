@@ -4,16 +4,25 @@ const countEl = document.getElementById("count");
 const emptyEl = document.getElementById("empty");
 const toolbarEl = document.getElementById("toolbar");
 const aiWorkflowEl = document.getElementById("ai-workflow");
+const invoiceExampleEl = document.getElementById("invoice-example");
 const tabButtons = document.querySelectorAll(".tab-btn");
+
+const specialSections = {
+  ai: aiWorkflowEl,
+  "invoice-example": invoiceExampleEl,
+};
 
 let activeFilter = "done";
 
 function render() {
-  const isAiTab = activeFilter === "ai";
-  toolbarEl.classList.toggle("hidden", isAiTab);
-  cardsEl.classList.toggle("hidden", isAiTab);
-  aiWorkflowEl.classList.toggle("hidden", !isAiTab);
-  if (isAiTab) {
+  const specialEl = specialSections[activeFilter];
+  const isSpecialTab = Boolean(specialEl);
+  toolbarEl.classList.toggle("hidden", isSpecialTab);
+  cardsEl.classList.toggle("hidden", isSpecialTab);
+  Object.values(specialSections).forEach(section => {
+    section.classList.toggle("hidden", section !== specialEl);
+  });
+  if (isSpecialTab) {
     emptyEl.classList.add("hidden");
     return;
   }
