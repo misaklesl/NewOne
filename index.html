@@ -5,11 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Přehled vývoje a nápadů</title>
 <link rel="stylesheet" href="styles.css">
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("theme");
+    var theme = stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {}
+})();
+</script>
 </head>
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Přepnout světlý/tmavý režim">
+      <span class="theme-icon" aria-hidden="true">🌙</span>
+    </button>
     <h1>🚀 Přehled vývoje</h1>
     <p class="subtitle">k čemu jsem využila AI a k čemu jí můžete použít i vy</p>
   </div>
