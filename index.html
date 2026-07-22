@@ -108,6 +108,131 @@
         </li>
       </ul>
     </div>
+
+    <div class="ai-example">
+      <h3>Příklad – Vytěžování faktur</h3>
+
+      <div class="example-section">
+        <h4><span class="example-step">1</span> Problém</h4>
+        <p>Přijaté faktury dnes ručně přeťukáváme do Heliosu – opisujeme dodavatele, částku, variabilní symbol, datum splatnosti i jednotlivé položky. Je to opakovaná administrativa náchylná na překlepy a nejvíc zdržuje účtárnu ve špičce na konci měsíce.</p>
+        <p>Řešení: nechat AI fakturu <strong>vytěžit</strong> – přečíst PDF nebo sken a připravit data na jedno kliknutí importu. Člověk už jen zkontroluje a potvrdí, nepřepisuje.</p>
+      </div>
+
+      <div class="example-section">
+        <h4><span class="example-step">2</span> Claude Design – data flow a use case diagram</h4>
+        <p>Ze slovního popisu procesu Claude Design vygeneroval dva diagramy, které pomohly ujasnit, kudy budou data téct a kdo (nebo co) s nimi bude pracovat.</p>
+
+        <p class="diagram-caption">Data flow – tok faktury od příjmu po zaúčtování</p>
+        <div class="flow-diagram">
+          <div class="flow-step">
+            <span class="flow-icon" aria-hidden="true">📥</span>
+            <span class="flow-title">Příjem faktury</span>
+            <small class="flow-detail">e-mail / sken</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-icon" aria-hidden="true">🤖</span>
+            <span class="flow-title">AI vytěžení dat</span>
+            <small class="flow-detail">dodavatel, částka, VS, splatnost</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-icon" aria-hidden="true">👀</span>
+            <span class="flow-title">Kontrola účetní</span>
+            <small class="flow-detail">doplnění, oprava</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-icon" aria-hidden="true">💾</span>
+            <span class="flow-title">Import do Heliosu</span>
+            <small class="flow-detail">na jedno kliknutí</small>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step">
+            <span class="flow-icon" aria-hidden="true">🗄️</span>
+            <span class="flow-title">Archivace</span>
+            <small class="flow-detail">originál PDF</small>
+          </div>
+        </div>
+
+        <p class="diagram-caption">Use case – kdo s čím pracuje</p>
+        <svg class="usecase-diagram" viewBox="0 0 720 320" role="img" aria-label="Use case diagram vytěžování faktur: Účetní nahrává a kontroluje fakturu, AI ji vytěží, Helios fakturu zaúčtuje a archivuje">
+          <defs>
+            <marker id="uc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10" class="uc-arrowhead" />
+            </marker>
+          </defs>
+
+          <rect class="uc-boundary" x="140" y="30" width="440" height="270" rx="14" />
+          <text class="uc-title" x="360" y="50" text-anchor="middle">Vytěžování faktur (AI)</text>
+
+          <!-- Účetní -->
+          <g class="uc-actor-shape">
+            <circle cx="55" cy="100" r="11" />
+            <line x1="55" y1="111" x2="55" y2="155" />
+            <line x1="32" y1="128" x2="78" y2="128" />
+            <line x1="55" y1="155" x2="35" y2="190" />
+            <line x1="55" y1="155" x2="75" y2="190" />
+          </g>
+          <text class="uc-actor-label" x="55" y="207" text-anchor="middle">Účetní</text>
+
+          <!-- Helios -->
+          <g class="uc-actor-shape">
+            <circle cx="655" cy="100" r="11" />
+            <line x1="655" y1="111" x2="655" y2="155" />
+            <line x1="632" y1="128" x2="678" y2="128" />
+            <line x1="655" y1="155" x2="635" y2="190" />
+            <line x1="655" y1="155" x2="675" y2="190" />
+          </g>
+          <text class="uc-actor-label" x="655" y="207" text-anchor="middle">Helios</text>
+
+          <!-- asociace -->
+          <line class="uc-assoc" x1="78" y1="125" x2="162" y2="100" />
+          <line class="uc-assoc" x1="78" y1="155" x2="160" y2="218" />
+          <line class="uc-assoc" x1="574" y1="100" x2="632" y2="125" />
+          <line class="uc-assoc" x1="568" y1="218" x2="632" y2="152" />
+
+          <!-- include -->
+          <line class="uc-include" x1="282" y1="112" x2="330" y2="143" marker-end="url(#uc-arrow)" />
+          <text class="uc-include-label" x="315" y="118" text-anchor="middle">«include»</text>
+
+          <!-- use cases -->
+          <ellipse class="uc-oval" cx="230" cy="100" rx="70" ry="26" />
+          <text class="uc-label" x="230" y="104" text-anchor="middle">Nahrát fakturu</text>
+
+          <ellipse class="uc-oval" cx="370" cy="160" rx="78" ry="30" />
+          <text class="uc-label" x="370" y="156" text-anchor="middle">Vytěžit data</text>
+          <text class="uc-label" x="370" y="172" text-anchor="middle">(AI)</text>
+
+          <ellipse class="uc-oval" cx="230" cy="220" rx="72" ry="26" />
+          <text class="uc-label" x="230" y="224" text-anchor="middle">Zkontrolovat data</text>
+
+          <ellipse class="uc-oval" cx="500" cy="100" rx="72" ry="26" />
+          <text class="uc-label" x="500" y="96" text-anchor="middle">Zaúčtovat</text>
+          <text class="uc-label" x="500" y="112" text-anchor="middle">do Heliosu</text>
+
+          <ellipse class="uc-oval" cx="500" cy="220" rx="68" ry="26" />
+          <text class="uc-label" x="500" y="216" text-anchor="middle">Archivovat</text>
+          <text class="uc-label" x="500" y="232" text-anchor="middle">fakturu</text>
+        </svg>
+      </div>
+
+      <div class="example-section">
+        <h4><span class="example-step">3</span> Claude Code – zadání promptu</h4>
+        <p>S diagramy v ruce jsem zadala Claude Code konkrétní prompt, ať rovnou postaví funkční prototyp:</p>
+        <blockquote class="example-prompt">„Uvažuj jako účetní a fakturant. Jsi odborník na zadávání faktur do ERP systému, faktury vytěžuješ a přeťukáváš do Heliosu. Vytvoř jednoduchou webovou aplikaci, která bude vytěžovat faktury – tak, aby se snížila administrativa a pomocí importu byly faktury hromadně importovány. Výstup mi ukaž jako artefakt v náhledu.“</blockquote>
+      </div>
+
+      <div class="example-section">
+        <h4><span class="example-step">4</span> Claude Code – založení PR</h4>
+        <p>Po odsouhlasení návrhu v artefaktu Claude Code založil větev, commitnul kód a otevřel pull request k revizi – bez nutnosti ručně sahat do gitu.</p>
+      </div>
+
+      <div class="example-section">
+        <h4><span class="example-step">5</span> Claude Code – monitorování zpětné vazby</h4>
+        <p>Claude Code dál sleduje pull request – reaguje na komentáře z code review a na chyby z CI, opravuje je a dopisuje do stejné větve, dokud PR není v pořádku ke spojení.</p>
+      </div>
+    </div>
   </section>
 </main>
 
